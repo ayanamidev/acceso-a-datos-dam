@@ -7,9 +7,9 @@ public class Index {
 
         int cantidadLeida=0;
 
-        BufferedInputStream bis= new BufferedInputStream(new FileInputStream("C:\\PRUEBAS\\documetno.pdf"));
+        BufferedInputStream bis= new BufferedInputStream(new FileInputStream("C:\\Users\\laura\\Desktop\\2ºDAM\\ACCESO A DATOS\\prueba2.pdf"));
 
-        BufferedOutputStream bos= new BufferedOutputStream(new FileOutputStream("C:\\PRUEBAS\\document.pdf"));
+        BufferedOutputStream bos= new BufferedOutputStream(new FileOutputStream("C:\\Users\\laura\\Desktop\\2ºDAM\\ACCESO A DATOS\\prueba3.pdf"));
 
         while ((cantidadLeida=bis.read(buffer,0,TAMANHO))!=1){
                             bos.write(buffer,0,cantidadLeida);
