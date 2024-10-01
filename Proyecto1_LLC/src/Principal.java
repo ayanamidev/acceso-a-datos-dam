@@ -6,22 +6,22 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.stream.Stream;
+import java.util.InputMismatchException;
 
 public class Principal {
     public static void main(String[] args) throws IOException {
+
+        final String RUTA="C:\\Users\\laura\\Desktop\\alumnos.csv";
         while (true){
             menu();
             int opcion=leerInt();
             switch (opcion){
-                case 1:{
-                    Path origen= Paths.get("C:\\Users\\laura\\Desktop\\alumnos.csv");
-                    BufferedReader br= Files.newBufferedReader(origen);
-                    Stream <String> lineas=br.lines();
-                    lineas.forEach(System.out::println);
-                    br.close();}
-                break;
+
+                case 1:
+                    Ficheros.MostrarFichero(RUTA);
+                    break;
                 case 2:
-                    Path origen= Paths.get("C:\\Users\\laura\\Desktop\\alumnos.csv");
+                    Path origen= Paths.get(RUTA);
                     BufferedReader br= Files.newBufferedReader(origen);
                     Stream <String> lineas=br.lines();
                     BufferedWriter bw=Files.newBufferedWriter(Paths.get("C:\\Users\\laura\\Desktop\\alumnosResultado.txt"));
@@ -44,10 +44,6 @@ public class Principal {
                                 throw new RuntimeException(e);
                             }
                             
-
-
-
-
                         }
 
                     });
@@ -57,6 +53,7 @@ public class Principal {
                     break;
                 case 3:System.exit(0);
                     break;
+                default: System.out.println("Opción incorrecta.");
             }
         }
 
@@ -66,7 +63,13 @@ public class Principal {
     }
 
     private static int leerInt() {
-        return new Scanner(System.in).nextInt();
+        try{
+            Scanner scanner=new Scanner(System.in);
+            return scanner.nextInt();
+        }catch(InputMismatchException e){
+            return 1;
+
+        }
     }
 
     private static void menu() {
