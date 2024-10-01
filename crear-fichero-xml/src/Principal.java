@@ -19,16 +19,49 @@ public class Principal {
         DocumentBuilder db=factoria.newDocumentBuilder();
         Document documento=db.newDocument();
 
+        //Alumnos
         Element alumnos=documento.createElement("alumnos");
         documento.appendChild(alumnos);
-        Element alumno=documento.createElement("alumno");
-        alumnos.appendChild(alumno);
-        Element dni=documento.createElement("dni");
-        dni.setTextContent("11111111A");
-        alumnos.appendChild(dni);
-        Element nombre=documento.createElement("nombre");
-        nombre.setTextContent("Jose");
-        alumnos.appendChild(nombre);
+
+            //Alumno 1
+            Element alumno1=documento.createElement("alumno");
+            alumnos.appendChild(alumno1);
+
+                    Element dniA1=documento.createElement("dni");
+                    dniA1.setTextContent("11111111A");
+                    alumno1.appendChild(dniA1);
+
+
+                    Element nombreA1=documento.createElement("nombre");
+                    nombreA1.setTextContent("Jose");
+                    alumno1.appendChild(nombreA1);
+
+            //Alumno2
+            Element alumno2=documento.createElement("alumno");
+            alumnos.appendChild(alumno2);
+
+                    Element dniA2=documento.createElement("dni");
+                    dniA2.setTextContent("11111111A");
+                    alumno2.appendChild(dniA2);
+
+
+                    Element nombreA2=documento.createElement("nombre");
+                    nombreA2.setTextContent("Menganito");
+                    alumno2.appendChild(nombreA2);
+
+            //Alumno3
+            Element alumno3=documento.createElement("alumno");
+            alumnos.appendChild(alumno3);
+
+                    Element dniA3=documento.createElement("dni");
+                    dniA3.setTextContent("11111111A");
+                    alumno3.appendChild(dniA3);
+
+                    Element nombreA3=documento.createElement("nombre");
+                    nombreA3.setTextContent("Fulanito");
+                    alumno3.appendChild(nombreA3);
+
+
 
         TransformerFactory tf=TransformerFactory.newInstance();
         Transformer transformer=tf.newTransformer();
